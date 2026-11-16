@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10111d">
+  <title>Ateliê Digital | Arte com JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#" class="brand">
+      <span class="brand-icon">✳</span>
+      <span>ATELIÊ<span class="brand-light">DIGITAL</span></span>
+    </a>
+
+    <span class="top-label">LABORATÓRIO CRIATIVO</span>
+
+    <button class="save-button" id="saveBtn">
+      <span>↓</span> Salvar arte
+    </button>
+  </header>
+
+  <main class="main-container">
+    <section class="intro">
+      <div>
+        <span class="eyebrow">CRIATIVIDADE EM MOVIMENTO</span>
+        <h1>Transforme ideias<br>em <span>arte digital.</span></h1>
+        <p>Experimente cores, formas e movimentos. Sua imaginação é a ferramenta principal.</p>
+      </div>
+
+      <div class="art-number">
+        <span>01 / 01</span>
+        <small>SEU ESPAÇO CRIATIVO</small>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="toolbar">
+        <div class="tool-section">
+          <span class="section-label">FERRAMENTAS</span>
+
+          <button class="tool-btn active" data-tool="brush">
+            <span class="tool-icon">✎</span>
+            <span>Pincel livre</span>
+          </button>
+
+          <button class="tool-btn" data-tool="neon">
+            <span class="tool-icon">✧</span>
+            <span>Neon</span>
+          </button>
+
+          <button class="tool-btn" data-tool="bubbles">
+            <span class="tool-icon">◉</span>
+            <span>Bolhas</span>
+          </button>
+
+          <button class="tool-btn" data-tool="geometric">
+            <span class="tool-icon">◇</span>
+            <span>Geométrico</span>
+          </button>
+
+          <button class="tool-btn" data-tool="confetti">
+            <span class="tool-icon">⁙</span>
+            <span>Confetes</span>
+          </button>
+        </div>
+
+        <div class="tool-section">
+          <span class="section-label">CORES</span>
+
+          <div class="palette" id="palette">
+            <button class="color-swatch selected" data-color="#ff5470" style="--swatch:#ff5470" aria-label="Rosa"></button>
+            <button class="color-swatch" data-color="#ffb347" style="--swatch:#ffb347" aria-label="Laranja"></button>
+            <button class="color-swatch" data-color="#ffe66d" style="--swatch:#ffe66d" aria-label="Amarelo"></button>
+            <button class="color-swatch" data-color="#5ee6a8" style="--swatch:#5ee6a8" aria-label="Verde"></button>
+            <button class="color-swatch" data-color="#55c8ff" style="--swatch:#55c8ff" aria-label="Azul"></button>
+            <button class="color-swatch" data-color="#a98bff" style="--swatch:#a98bff" aria-label="Roxo"></button>
+            <button class="color-swatch" data-color="#ffffff" style="--swatch:#ffffff" aria-label="Branco"></button>
+            <button class="color-swatch" data-color="#111111" style="--swatch:#111111" aria-label="Preto"></button>
+          </div>
+
+          <label class="custom-color">
+            <span>Cor personalizada</span>
+            <input type="color" id="colorPicker" value="#ff5470">
+          </label>
+        </div>
+
+        <div class="tool-section">
+          <div class="range-heading">
+            <label for="brushSize">TAMANHO DO PINCEL</label>
+            <output id="sizeValue">8 px</output>
+          </div>
+          <input type="range" id="brushSize" min="2" max="40" value="8">
+        </div>
+
+        <div class="tool-section">
+          <label class="background-label" for="backgroundColor">FUNDO DA ARTE</label>
+          <div class="background-control">
+            <input type="color" id="backgroundColor" value="#101426">
+            <span>Escolher fundo</span>
+          </div>
+        </div>
+
+        <div class="tool-section">
+          <label class="switch-row" for="symmetry">
+            <span>
+              <strong>Modo espelho</strong>
+              <small>Desenho simétrico</small>
+            </span>
+            <input type="checkbox" id="symmetry">
+            <span class="switch"></span>
+          </label>
+        </div>
+      </aside>
+
+      <section class="canvas-area">
+        <div class="canvas-header">
+          <div>
+            <span class="canvas-title">Minha tela de criação</span>
+            <span class="canvas-subtitle">Clique e arraste para desenhar</span>
+          </div>
+          <span class="live-status"><i></i> PRONTO PARA CRIAR</span>
+        </div>
+
+        <div class="canvas-frame">
+          <canvas id="artCanvas"></canvas>
+          <div class="canvas-hint" id="canvasHint">
+            <span>✳</span>
+            <strong>Sua arte começa aqui</strong>
+            <small>Use o mouse ou toque na tela para desenhar.</small>
+          </div>
+        </div>
+
+        <div class="canvas-footer">
+          <span id="canvasStatus">Tela pronta para receber sua criatividade.</span>
+          <div class="canvas-actions">
+            <button class="secondary-btn" id="clearBtn">Limpar tela</button>
+            <button class="primary-btn" id="randomBtn">✦ Criar arte aleatória</button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="tips">
+      <div class="tip-icon">✦</div>
+      <div>
+        <strong>Experimente sem medo.</strong>
+        <p>Cada combinação de cores e formas cria um resultado único. Não existe certo ou errado na arte.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>ATELIÊ DIGITAL © 2026</span>
+      <span>UM PROJETO CRIATIVO COM HTML, CSS E JAVASCRIPT</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
